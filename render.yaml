@@ -1,6 +1,7 @@
 services:
 - type: web
   name: minio-server
+  region: frankfurt
   healthCheckPath: /minio/health/live
   runtime: image
   image:
@@ -27,6 +28,8 @@ services:
     generateValue: true
   - key: MINIO_SECRET_KEY
     generateValue: true
+  - key: MINIO_REGION
+    value: "eu-west-1"
   # - key: MINIO_BROWSER
   #   value: "off"
   
